@@ -1,42 +1,36 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import 'tailwindcss';
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+@theme {
+  /* WHITE */
+  --color-white-100: #f7f9ff;
+  --color-white-200: #f0f4ff;
+  --color-white-300: #eaefff;
+  --color-white-400: #e5eaff;
+  --color-white-500: #e0e6ff;
+  --color-white-600: #ced4eb;
+  --color-white-700: #bcc2d8;
+  --color-white-800: #abb0c4;
+  --color-white-900: #999eb0;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  /* BLACK */
+  --color-black-100: #9295a1;
+  --color-black-200: #737684;
+  --color-black-300: #555866;
+  --color-black-400: #373a49;
+  --color-black-500: #1a1d2a;
+  --color-black-600: #171925;
+  --color-black-700: #131520;
+  --color-black-800: #10111b;
+  --color-black-900: #06060b;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  /* BLUE */
+  --color-blue-100: #dbe8ff;
+  --color-blue-200: #b9cfff;
+  --color-blue-300: #99b5ff;
+  --color-blue-400: #7999fe;
+  --color-blue-500: #5c7cfa;
+  --color-blue-600: #4e66dd;
+  --color-blue-700: #4152bf;
+  --color-blue-800: #34409f;
+  --color-blue-900: #292f80;
 }
