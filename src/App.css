@@ -33,4 +33,11 @@
   --color-blue-700: #4152bf;
   --color-blue-800: #34409f;
   --color-blue-900: #292f80;
+
+  --breakpoint-desktop-3: 160rem;
+  --breakpoint-desktop-2: 100rem;
+  --breakpoint-desktop-1: 80rem;
+  --breakpoint-tablet: 64rem;
+  --breakpoint-mobile-1: 48rem;
+  --breakpoint-mobile-2: 40rem;
 }

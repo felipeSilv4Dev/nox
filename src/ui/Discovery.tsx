@@ -1,24 +1,24 @@
 import Button from '../utils/Button';
 import ControlNextBanner from '../features/discovery/ControlNextBanner';
-import BannerDiscovery from '../features/discovery/bannerDiscovery';
-import Title from '../utils/Title';
+import BannerDiscovery from '../features/discovery/BannerDiscovery';
+import Title from '../features/discovery/Title';
+import Light from '../features/discovery/light';
 
 const Discovery = () => {
   return (
     <>
       <BannerDiscovery />
-      <span className="absolute top-[40%] left-1/2 block h-[20%] w-[20%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-blue-900 to-blue-500 blur-[120px]" />
 
-      <section className="relative z-1 col-span-full min-h-dvh">
-        <Title size={'text-5xl'} w="w-[16ch]">
-          PRECISION, SOPHISTICATION, AND DURABILITY
-        </Title>
-
-        <Button>explore</Button>
-
-        <span className="text-black-400 absolute top-16 right-0 font-['Bruno_Ace'] text-6xl">
+      <section className="desktop-1:row-span-12 tablet:row-span-8 relative z-1 col-span-full row-span-4 grid min-h-[max_contain] grid-cols-[repeat(4,1fr)] grid-rows-[repeat(4,auto)]">
+        <Light />
+        <div className="tablet:block tablet:m-0 col-span-full row-start-3 mx-auto flex h-fit w-fit flex-col items-center">
+          <Title>PRECISION, SOPHISTICATION, AND DURABILITY</Title>
+          <Button>explore</Button>
+        </div>
+        <span className="text-black-400 min-desktop-3:text-7xl tablet:text-4xl desktop-1:text-5xl desktop-2:text-6xl -col-end-1 h-[max-content] text-right font-['Bruno_Ace'] text-3xl">
           01
         </span>
+
         <ControlNextBanner />
       </section>
     </>
