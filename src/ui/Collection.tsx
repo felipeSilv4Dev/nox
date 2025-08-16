@@ -1,5 +1,5 @@
 const Collection = () => {
-  return <div className="text-white-100">Collection</div>;
+  return <section className="text-white-100 min-h-dvh">Collection</section>;
 };
 
 export default Collection;
