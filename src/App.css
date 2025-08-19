@@ -40,4 +40,16 @@
   --breakpoint-tablet: 64rem;
   --breakpoint-mobile-1: 48rem;
   --breakpoint-mobile-2: 40rem;
+  --animate-intro: intro 0.3s 0.24s ease-in forwards;
+
+  @keyframes intro {
+    0% {
+      opacity: 0;
+      transform: translateX(-3px);
+    }
+    100% {
+      opacity: 1;
+      transform: initial;
+    }
+  }
 }

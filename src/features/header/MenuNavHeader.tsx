@@ -29,13 +29,17 @@ const MenuNavHeader = () => {
       </p>
 
       <nav
-        className={`bg-black-600 ${open ? 'invisible' : 'visible'} tablet:w-2xs z-2 mt-4 h-fit w-[50vw] px-4 py-8 transition-all duration-75 ease-in`}
+        className={`bg-black-600 ${open ? 'visible' : 'invisible'} tablet:w-2xs z-2 mt-4 h-fit w-[50vw] px-4 py-8 transition-all duration-75 ease-in`}
       >
-        <NavLink to={'/'} className={styleActive}>
+        <NavLink to={'/'} className={styleActive} onClick={handleOpenNav}>
           Discovery
         </NavLink>
 
-        <NavLink to={'/collection'} className={styleActive}>
+        <NavLink
+          to={'/collection'}
+          className={styleActive}
+          onClick={handleOpenNav}
+        >
           Collection
         </NavLink>
       </nav>

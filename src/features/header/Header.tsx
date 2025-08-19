@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import * as FeatherIcon from 'feather-icons-react';
 import Icon from './Icon';
 import MenuNavHeader from './MenuNavHeader';
+import MenuMobileHeader from './MenuMobileHeader';
 // import DynamicSvg from '../../utils/DynamicSvg';
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
     <header className="desktop-1:items-center z-2 col-span-full row-end-1 flex h-fit w-full items-start justify-between">
       <NavLink
         to={'/'}
-        className="text-white-100 min-desktop-3:text-[48px] tablet:text-2xl desktop-2:text-3xl font-[Bruno_Ace] uppercase"
+        className="text-white-100 min-desktop-3:text-[48px] tablet:text-2xl desktop-2:text-3xl z-2 font-[Bruno_Ace] uppercase"
       >
         Nox
       </NavLink>
@@ -40,9 +41,9 @@ const Header = () => {
           <FeatherIcon.ShoppingCart className="min-desktop-3:h-[36px] min-desktop-3:w-[36px]" />
         </Icon>
 
-        <Icon styles="tablet:hidden mobile-1:inline">
-          <FeatherIcon.Menu />
-        </Icon>
+        <div className="tablet:hidden mobile-1:inline">
+          <MenuMobileHeader />
+        </div>
 
         <Icon styles="tablet:inline hidden">
           <FeatherIcon.User className="min-desktop-3:h-[36px] min-desktop-3:w-[36px]" />
