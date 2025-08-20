@@ -1,54 +1,14 @@
-import { NavLink } from 'react-router-dom';
-import * as FeatherIcon from 'feather-icons-react';
-import Icon from './Icon';
-import MenuNavHeader from './MenuNavHeader';
-import MenuMobileHeader from './MenuMobileHeader';
+import NavLinksHeader from './NavLinksHeader';
+import NavIconsHeader from './NavIconsHeader';
+import LogoHeader from './LogoHeader';
 // import DynamicSvg from '../../utils/DynamicSvg';
 
 const Header = () => {
-  const stylesLink =
-    '*:desktop-1:inline *:hover:text-white-100 *:min-desktop-3:text-[36px] *:desktop-1:text-[18px] desktop-2:space-x-6 *:desktop-2:text-xl space-x-4 *:font-[Assistant] *:font-semibold *:transition-all *:duration-200 *:text-white-600';
-
-  const styleActive = ({ isActive }: { isActive: boolean }) =>
-    isActive ? 'text-white-100 hidden' : 'text-white-600 hidden';
-
   return (
-    <header className="desktop-1:items-center z-2 col-span-full row-end-1 flex h-fit w-full items-start justify-between">
-      <NavLink
-        to={'/'}
-        className="text-white-100 min-desktop-3:text-[48px] tablet:text-2xl desktop-2:text-3xl z-2 font-[Bruno_Ace] uppercase"
-      >
-        Nox
-      </NavLink>
-
-      <nav>
-        <ul className={stylesLink}>
-          <MenuNavHeader />
-          <NavLink className={styleActive} to={'/'}>
-            Discovery
-          </NavLink>
-          <NavLink className={styleActive} to={'/collection'}>
-            Collection
-          </NavLink>
-        </ul>
-      </nav>
-      <div className="desktop-2:gap-6 flex gap-4">
-        <Icon styles="tablet:inline hidden">
-          <FeatherIcon.Search className="min-desktop-3:h-[36px] min-desktop-3:w-[36px]" />
-        </Icon>
-
-        <Icon>
-          <FeatherIcon.ShoppingCart className="min-desktop-3:h-[36px] min-desktop-3:w-[36px]" />
-        </Icon>
-
-        <div className="tablet:hidden mobile-1:inline">
-          <MenuMobileHeader />
-        </div>
-
-        <Icon styles="tablet:inline hidden">
-          <FeatherIcon.User className="min-desktop-3:h-[36px] min-desktop-3:w-[36px]" />
-        </Icon>
-      </div>
+    <header className="z-2 col-span-full row-end-1 flex h-fit w-full items-center justify-between">
+      <LogoHeader />
+      <NavLinksHeader />
+      <NavIconsHeader />
     </header>
   );
 };

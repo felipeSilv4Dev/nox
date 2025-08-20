@@ -8,20 +8,23 @@ interface SearchContainerProps {
   search: boolean;
 }
 const MenuMobileHeader = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const iconMenu = (
     <div
-      className={`relative h-[2.5px] w-8 bg-blue-100 transition-all duration-200 ease-linear before:absolute before:top-6 before:block before:h-full before:w-full before:bg-blue-100 before:transition-all before:duration-200 before:ease-linear after:absolute after:top-3 after:block after:h-full after:w-full after:transition-all after:duration-200 after:ease-linear ${open ? 'bg-transparent before:-translate-y-3 before:-rotate-45 after:top-0 after:rotate-45' : ''} after:bg-blue-100`}
+      className={`relative h-[2px] w-8 bg-blue-100 transition-all duration-200 ease-linear before:absolute before:top-[10px] before:block before:h-full before:w-full before:bg-blue-100 before:transition-all before:duration-200 before:ease-linear after:absolute after:top-[20px] after:block after:h-full after:w-full after:transition-all after:duration-200 after:ease-linear ${open ? 'bg-transparent before:-top-[10px] before:-rotate-45 after:-translate-y-[10px] after:rotate-45' : ''} after:bg-blue-100`}
     />
   );
 
   return (
-    <>
+    <div className="tablet:hidden mobile-1:block self-stretch">
       <MenuOptions open={open} />
-      <div className="relative h-full" onClick={() => setOpen(!open)}>
+      <div
+        className="relative h-full self-stretch"
+        onClick={() => setOpen(!open)}
+      >
         {iconMenu}
       </div>
-    </>
+    </div>
   );
 };
 
