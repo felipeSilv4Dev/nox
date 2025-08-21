@@ -1,11 +1,11 @@
 import ControlNextBanner from './ControlNextBanner';
-import Button from '../../utils/Button';
+import Button from '../../../utils/Button';
 import Title from './Title';
 import Light from './Light';
 
 const IntroDiscovery = () => {
   return (
-    <section className="desktop-1:row-span-12 tablet:row-span-8 relative z-1 col-span-full row-span-4 grid min-h-[max_contain] grid-cols-[repeat(4,1fr)] grid-rows-[repeat(4,auto)]">
+    <section className="desktop-1:row-span-12 tablet:row-span-8 relative z-1 col-span-full row-span-4 grid h-[75vh] min-h-[max_contain] grid-cols-[repeat(4,1fr)] grid-rows-[repeat(4,auto)]">
       <Light />
       <div className="tablet:block tablet:m-0 col-span-full row-start-3 mx-auto flex h-fit w-fit flex-col items-center">
         <Title>PRECISION, SOPHISTICATION, AND DURABILITY</Title>
