@@ -1,13 +1,14 @@
 interface BrandImageProps {
-  image: number;
+  image: string;
   title: string;
 }
-const BrandImage = ({ image, title }: BrandImageProps) => {
+
+const BrandImage = ({ title, image }: BrandImageProps) => {
   return (
     <div
-      className={`before:bg-black-500 border-black-900 desktop-1:h-60 desktop-1:w-60 min-desktop-3:w-90 min-desktop-3:before:top-6 min-desktop-3:before:-right-6 min-desktop-3:h-90 relative border-r-4 border-b-4 bg-[linear-gradient(to_top_left,_rgba(185,207,255,.7),_rgba(92,124,250,.7)),url('./image-brand-${image}.jpg')] tablet:before:top-3 tablet:before:-right-3 tablet:h-46 tablet:w-46 bg-cover bg-center bg-no-repeat bg-blend-color before:absolute before:top-4 before:-right-4 before:-z-1 before:h-full before:w-full`}
+      className={`before:bg-black-500 tablet:h-50 tablet:w-50 desktop-1:h-65 desktop-1:w-65 before:none mobile-1:h-60 mobile-1:w-60 mobile-1:text-sm relative h-60 w-60 bg-[linear-gradient(to_top_left,_rgba(185,207,255,.7),_rgba(92,124,250,.7)),url('${image}')] bg-cover bg-center bg-no-repeat text-xs bg-blend-color before:absolute before:-z-1 before:h-full before:w-full`}
     >
-      <h3 className="tablet:text-xs desktop-1:text-sm text-white-100 desktop-2:2xl desktop-1:p-4 p-3 font-[Bruno_Ace] uppercase">
+      <h3 className="desktop-1:text-sm text-white-100 desktop-2:text-[16px] min-desktop-3:text-[18px] desktop-1:p-4 desktop-2:p-6 relative p-3 font-[Bruno_Ace] text-xs uppercase">
         {title}
       </h3>
     </div>

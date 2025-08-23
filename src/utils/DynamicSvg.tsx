@@ -1,28 +1,16 @@
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 type SvgProps = {
+  color: string;
   paths: { d: string; stroke?: string; strokeWidth?: number }[];
 };
 
-export default function DynamicSvg({ paths }: SvgProps) {
-  const variantsConfig = {
-    hidden: { pathLength: 0, fill: 'rgba(255,255,255,0)' },
-    visible: {
-      pathLength: 1,
-      fill: '#F7F9FF',
-      stroke: 0,
-      transition: {
-        pathLength: { duration: 2, ease: 'easeInOut' },
-        fill: { duration: 1, delay: 2 },
-        stroke: { duration: 1, delay: 2 },
-      },
-    },
-  };
+export default function DynamicSvg({ paths, color }: SvgProps) {
   return (
     <motion.svg
-      className={'view- z-1 h-[24px] w-[94px]'}
+      className={'z-1 h-[32vw] w-[32vw]'}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="240 0 200 240"
+      viewBox="0 0 600 680"
       initial="hidden"
       animate="visible"
     >
@@ -31,9 +19,29 @@ export default function DynamicSvg({ paths }: SvgProps) {
           key={i}
           d={path.d}
           stroke={path.stroke || 'transparent'}
-          strokeWidth={16}
+          strokeWidth={1}
           fill="transparent"
-          variants={variantsConfig as Variants}
+          variants={{
+            hidden: { pathLength: 0, fill: 'rgba(55, 58, 73, 0)' },
+            visible: {
+              pathLength: 1,
+              fill: color,
+              stroke: 0,
+              transition: {
+                pathLength: {
+                  duration: (i + 1) * 2,
+                },
+                fill: {
+                  duration: 1,
+                  delay: (i + 1) * 2,
+                },
+                stroke: {
+                  duration: 1,
+                  delay: (i + 1) * 2,
+                },
+              },
+            },
+          }}
         />
       ))}
     </motion.svg>

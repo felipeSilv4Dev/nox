@@ -21,12 +21,12 @@ const SlideBrands = ({ children }: SlideProps) => {
   return (
     <>
       <Swiper
-        className="tablet:w-100 tablet:h-108 desktop-1:h-134 desktop-1:w-134 min-desktop-3:h-200 min-desktop-3:w-200"
+        className="tablet:w-full h-fit"
         modules={[Navigation]}
         onSwiper={handleSwiper}
         onActiveIndexChange={(index) => handleActiveSlide(index.activeIndex)}
-        spaceBetween={32}
-        slidesPerView={1}
+        spaceBetween={2}
+        slidesPerView={1.5}
       >
         {children}
       </Swiper>

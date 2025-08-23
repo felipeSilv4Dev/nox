@@ -7,7 +7,7 @@ interface IconProps {
 }
 const Icon = ({ children, styles = '' }: IconProps) => {
   const styleBase =
-    'text-white-100 tablet:border-black-500 tablet:hover:bg-black-500 min-desktop-3:p-[24px] tablet:border-2 tablet:p-3 desktop-2:p-4 desktop-2:text-xl font-[Assistant] aspect-square font-semibold xl:text-[18px] w-fit h-fit';
+    'text-white-100 tablet:border-black-500 tablet:hover:bg-black-500 tablet:border-2 tablet:p-3  font-[Assistant] aspect-square font-semibold desktop-1:p-4 w-fit';
 
   return (
     <NavLink to="" className={`${styles} ${styleBase}`}>

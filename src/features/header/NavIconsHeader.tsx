@@ -1,7 +1,7 @@
 import * as FeatherIcon from 'feather-icons-react';
 import Icon from './Icon';
-import MenuMobileHeader from './MenuMobileHeader';
 import InputSearch from './InputSearch';
+import MenuMobile from '../menuMobile/MenuMobile';
 
 const NavIconsHeader = () => {
   return (
@@ -11,13 +11,13 @@ const NavIconsHeader = () => {
       </div>
 
       <Icon>
-        <FeatherIcon.ShoppingCart className="min-desktop-3:h-[36px] min-desktop-3:w-[36px] h-6" />
+        <FeatherIcon.ShoppingCart />
       </Icon>
 
-      <MenuMobileHeader />
+      <MenuMobile />
 
       <Icon styles="tablet:inline hidden">
-        <FeatherIcon.User className="min-desktop-3:h-[36px] min-desktop-3:w-[36px]" />
+        <FeatherIcon.User />
       </Icon>
     </ul>
   );

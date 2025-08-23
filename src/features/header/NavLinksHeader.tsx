@@ -1,21 +1,29 @@
 import { NavLink } from 'react-router';
 import MenuNavHeader from './MenuNavHeader';
 
-const stylesLink =
-  '*:desktop-1:inline *:hover:text-white-100 *:min-desktop-3:text-[36px] *:desktop-1:text-[18px] desktop-2:space-x-6 *:desktop-2:text-xl space-x-4 *:font-[Assistant] *:font-semibold *:transition-all *:duration-200 *:text-white-600';
-
+interface isActiveProps {
+  isActive: boolean;
+}
 const NavLinksHeader = () => {
-  const styleActive = ({ isActive }: { isActive: boolean }) =>
-    isActive ? 'text-white-100 hidden' : 'text-white-600 hidden';
-
   return (
     <nav>
-      <ul className={stylesLink}>
+      <ul className={'desktop-1:gap-6 flex items-center justify-center gap-4'}>
         <MenuNavHeader />
-        <NavLink className={styleActive} to={'/'}>
+        <NavLink
+          to={'/'}
+          className={`desktop-1:block desktop-1:text-[18px] hover:text-white-100 desktop-2:text-xl text-white-600 hidden font-[Assistant] font-semibold transition-all duration-200 ${({
+            isActive,
+          }: isActiveProps) => (isActive ? 'text-white-100' : '')}`}
+        >
           Discovery
         </NavLink>
-        <NavLink className={styleActive} to={'/collection'}>
+
+        <NavLink
+          to={'/collection'}
+          className={`desktop-1:block desktop-1:text-[18px] hover:text-white-100 desktop-2:text-xl text-white-600 hidden font-[Assistant] font-semibold transition-all duration-200 ${({
+            isActive,
+          }: isActiveProps) => (isActive ? 'text-white-100 hidden' : '')}`}
+        >
           Collection
         </NavLink>
       </ul>
