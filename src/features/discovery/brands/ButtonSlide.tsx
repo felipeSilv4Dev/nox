@@ -19,7 +19,7 @@ const ButtonSlide = ({ items, swiper, active }: ButtonSlideProps) => {
           <span
             key={i}
             onClick={() => handleToSlideIndex(i)}
-            className={`${active === i ? 'bg-blue-200' : 'bg-black-400'} desktop-2:h-[5px] mt-4 h-1 w-14 cursor-pointer rounded-full transition-all duration-75 ease-linear`}
+            className={`${active === i ? 'bg-blue-200' : 'bg-black-400'} tablet:w-12 desktop-1:w-14 tablet:h-1 h-[2px] w-4 cursor-pointer rounded-full transition-all duration-75 ease-linear`}
           />
         ))}
       </div>

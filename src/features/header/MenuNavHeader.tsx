@@ -23,20 +23,18 @@ const MenuNavHeader = () => {
   }
 
   return (
-    <>
-      <div className="*:desktop-1:hidden relative m-0">
-        <p
-          className={`${styles} text-white-100 flex cursor-pointer items-end justify-center capitalize`}
-          onClick={handleOpenNav}
-        >
-          {nameLink}
-          <FeatherIcon.ChevronUp
-            className={`${open ? 'rotate-0' : 'rotate-180'} w-fit duration-75 ease-in`}
-          />
-        </p>
-      </div>
+    <div className="*:desktop-1:hidden relative m-0">
+      <p
+        className={`${styles} text-white-100 flex cursor-pointer items-end justify-center capitalize`}
+        onClick={handleOpenNav}
+      >
+        {nameLink}
+        <FeatherIcon.ChevronUp
+          className={`${open ? 'rotate-0' : 'rotate-180'} w-fit duration-75 ease-in`}
+        />
+      </p>
       <Links onOpen={handleOpenNav} open={open} />
-    </>
+    </div>
   );
 };
 
@@ -48,7 +46,7 @@ interface LinksProps {
 const Links = ({ onOpen, open }: LinksProps) => {
   return (
     <nav
-      className={`bg-black-600 absolute ${open ? 'visible' : 'invisible hidden'} tablet:w-2xs tablet:left-[initial] tablet:right-[initial] desktop-1:invisible right-4 left-8 z-2 mt-4 h-fit px-4 py-8 transition-all duration-75 ease-in`}
+      className={`bg-black-600 absolute ${open ? 'visible' : 'invisible hidden'} tablet:w-2xs tablet:left-[initial] tablet:right-[initial] desktop-1:invisible z-1 mt-4 h-fit w-full px-4 py-8 transition-all duration-75 ease-in`}
     >
       <NavLink to={'/'} className={styleActive} onClick={onOpen}>
         Discovery

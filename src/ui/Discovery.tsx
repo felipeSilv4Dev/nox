@@ -1,13 +1,15 @@
-import Brands from '../features/discovery/brands/Brands';
+// import Brands from '../features/discovery/brands/Brands';
 import BannerDiscovery from '../features/discovery/intro/BannerDiscovery';
-import IntroDiscovery from '../features/discovery/intro/IntroDiscovery';
+import Intro from '../features/discovery/intro/Intro';
+import Products from '../features/discovery/products/Products';
 
 const Discovery = () => {
   return (
     <>
       <BannerDiscovery />
-      <IntroDiscovery />
-      <Brands />
+      <Intro />
+      {/* <Brands /> */}
+      <Products />
     </>
   );
 };

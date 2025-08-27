@@ -1,6 +1,6 @@
 const Light = () => {
   return (
-    <span className="min-desktop-3:blur-[9rem] tablet:blur-[6rem] absolute top-[40%] left-[40%] -z-1 block h-[20%] w-[20%] rounded-full bg-linear-to-r from-blue-700 to-blue-500 blur-[5rem]" />
+    <span className="absolute top-1/2 left-1/2 -z-1 block h-[12vw] w-[12vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(_#5c7cfa,_#292f80)] blur-[4rem]" />
   );
 };
 

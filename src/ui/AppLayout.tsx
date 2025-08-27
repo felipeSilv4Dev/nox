@@ -5,12 +5,12 @@ import MenuOptions from '../features/menuMobile/MenuOptions';
 
 const AppLayout = () => {
   const tablet =
-    'tablet:py-16 tablet:w-[94%] tablet:grid-cols-[repeat(8,1fr)] tablet:grid-rows-[repeat(8,auto)]';
+    'tablet:pt-0 tablet:w-[94%] tablet:grid-cols-[repeat(8,1fr)] tablet:grid-rows-[repeat(8,auto)]';
   const desktop =
-    'desktop-1:py-20 desktop-1:w-[76%] desktop-1:grid-cols-[repeat(12,1fr)] desktop-1:grid-rows-[repeat(12,auto)]';
+    'desktop-1:py-20 desktop-1:w-[80%] desktop-2:w-[76%] desktop-1:grid-cols-[repeat(12,1fr)] desktop-1:grid-rows-[repeat(12,auto)]';
 
   return (
-    <section className="bg-black-900 h-[max_content] min-h-dvh">
+    <section className="bg-black-900 h-max min-h-dvh">
       <main
         className={`${tablet} ${desktop} relative mx-auto grid min-h-[calc(100vh_-_100px)] max-w-[1600px] grid-cols-[repeat(4,1fr)] grid-rows-[repeat(4,1fr)] gap-8`}
       >
