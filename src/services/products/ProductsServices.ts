@@ -5,14 +5,14 @@ const ProductsService = () => {
   const { modelsProduct, activeModelsProduct } = useGlobalStorage(
     (state) => state,
   );
-  const isTablet = UseMatch('80rem');
+  const isTablet = UseMatch('64rem');
   const isDesktop = UseMatch('100rem');
 
   const slideCount = isDesktop ? 5 : isTablet ? 4 : 1;
   if (!modelsProduct) return;
 
   const lastSlide = modelsProduct.slides.length;
-  const existPrev = activeModelsProduct >= slideCount;
+  const existPrev = activeModelsProduct > slideCount / 2;
   const existNext = activeModelsProduct < lastSlide - slideCount;
 
   function next() {
