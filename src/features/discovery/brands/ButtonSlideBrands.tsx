@@ -23,7 +23,7 @@ const ButtonSlideBrands = ({ active, swiper }: ButtonSlideBrandsProps) => {
           onClick={() => handleToSlideTouch(index)}
         >
           <span
-            className={`block ${active === index ? 'h-3 w-3' : 'h-1 w-1'} rounded-full bg-amber-300 transition-all duration-200 ease-linear`}
+            className={`block ${active === index ? 'h-3 w-3' : 'h-1 w-1'} bg-white-300 rounded-full transition-all duration-200 ease-linear`}
           />
         </div>
       ))}
