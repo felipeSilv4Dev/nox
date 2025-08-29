@@ -9,7 +9,7 @@ const ProductsService = () => {
   const isDesktop = UseMatch('100rem');
 
   const slideCount = isDesktop ? 5 : isTablet ? 4 : 1;
-  if (!modelsProduct) return;
+  if (!(modelsProduct && modelsProduct.slides)) return;
 
   const lastSlide = modelsProduct.slides.length;
   const existPrev = activeModelsProduct > slideCount / 2;

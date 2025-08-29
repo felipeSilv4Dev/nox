@@ -1,5 +1,25 @@
+import HeaderFooter from './HeaderFooter';
+import SocialsFooter from './SocialsFooter';
+import NavFooter from './NavFooter';
+import ContactsFooter from './ContactsFooter';
+
 const Footer = () => {
-  return <div className="relative h-[100px] w-full bg-amber-200">Footer</div>;
+  const tablet = 'tablet:pt-0 tablet:w-[94%] tablet:grid-cols-[repeat(8,1fr)] ';
+  const desktop =
+    'desktop-1:py-20 desktop-1:w-[80%] desktop-2:w-[76%] desktop-1:grid-cols-[repeat(12,1fr)]';
+
+  return (
+    <footer className="bg-black-800 mt-16">
+      <section
+        className={`${tablet} ${desktop} relative mx-auto grid max-w-[1600px] grid-cols-[repeat(4,1fr)] gap-8 space-y-8 px-4 py-12`}
+      >
+        <HeaderFooter />
+        <SocialsFooter />
+        <NavFooter />
+        <ContactsFooter />
+      </section>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router';
 
-const LogoHeader = () => {
+const Logo = () => {
   return (
     <NavLink
       to={'/'}
@@ -11,4 +11,4 @@ const LogoHeader = () => {
   );
 };
 
-export default LogoHeader;
+export default Logo;

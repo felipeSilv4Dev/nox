@@ -12,7 +12,7 @@ const AppLayout = () => {
   return (
     <section className="bg-black-900 h-max min-h-dvh">
       <main
-        className={`${tablet} ${desktop} relative mx-auto grid min-h-[calc(100vh_-_100px)] max-w-[1600px] grid-cols-[repeat(4,1fr)] grid-rows-[repeat(4,1fr)] gap-8`}
+        className={`${tablet} ${desktop} relative mx-auto grid min-h-screen max-w-[1600px] grid-cols-[repeat(4,1fr)] grid-rows-[repeat(4,1fr)] gap-8`}
       >
         <Header />
         <MenuOptions />
