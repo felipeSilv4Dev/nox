@@ -15,7 +15,7 @@ const NavFooter = () => {
     swiper.slideTo(index);
   }
   return (
-    <div className="col-span-full space-y-5">
+    <section className="tablet:col-span-4 desktop-1:col-span-6 col-span-full space-y-5">
       <ControlNavFooter
         onNavNext={handleToNextNav}
         active={activeIndex}
@@ -40,7 +40,7 @@ const NavFooter = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 

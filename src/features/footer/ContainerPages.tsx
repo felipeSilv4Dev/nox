@@ -14,10 +14,10 @@ const ContainerPages = ({
     <div
       className={`bg-black-800 space-y-2 opacity-0 ${index === active ? 'animate-intro' : ''}`}
     >
-      <h3 className='text-white-100 font-["Bruno_Ace"] text-[18px] capitalize'>
+      <h3 className='text-white-100 tablet:text-xl font-["Bruno_Ace"] text-[18px] capitalize'>
         {title}
       </h3>
-      <p className='text-white-500 w-full font-["Assistant"] text-xs'>
+      <p className='text-white-500 tablet:text-sm w-full font-["Assistant"] text-xs'>
         {description}
       </p>
     </div>
