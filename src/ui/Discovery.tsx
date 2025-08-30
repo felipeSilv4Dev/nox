@@ -1,3 +1,4 @@
+import Benefits from '../features/discovery/benefits/Benefits';
 import Brands from '../features/discovery/brands/Brands';
 import BannerDiscovery from '../features/discovery/intro/BannerDiscovery';
 import Intro from '../features/discovery/intro/Intro';
@@ -10,6 +11,7 @@ const Discovery = () => {
       <Intro />
       <Brands />
       <Products />
+      <Benefits />
     </>
   );
 };

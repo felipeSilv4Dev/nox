@@ -1,12 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import UseMatch from '../../../utils/UseMatch';
 import Product from '../../product/Product';
 import useGlobalStorage from '../../../utils/useGlobalStorage';
 import type { Swiper as SwiperType } from 'swiper/types';
 
 const ContainerProducts = () => {
-  const isTablet = UseMatch('64rem');
-  const isDesktop = UseMatch('100rem');
   const products = Array.from({ length: 15 });
   const { setModelsProduct, SetActiveModelsProduct } = useGlobalStorage(
     (state) => state,
@@ -24,7 +21,18 @@ const ContainerProducts = () => {
       spaceBetween={24}
       onSwiper={handleSwiper}
       onActiveIndexChange={handleActiveIndexChange}
-      slidesPerView={isDesktop ? 5 : isTablet ? 4 : 1.45}
+      slidesPerView={1.45}
+      breakpoints={{
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+        1440: {
+          slidesPerView: 5,
+        },
+      }}
     >
       {products.map((_, index) => (
         <SwiperSlide key={index} className="!h-fit">
