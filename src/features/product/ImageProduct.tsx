@@ -1,6 +1,11 @@
 const ImageProduct = () => {
   return (
-    <div className="relative h-64 w-full bg-blue-950">
+    <div
+      style={{
+        backgroundImage: `linear-gradient(to bottom,rgba(6, 6, 11,.1) 50%,rgba(6,6,11,.8) 95%),url('./product-1.jpg')`,
+      }}
+      className="relative h-64 w-full bg-cover bg-center"
+    >
       <div className="absolute bottom-4 left-4">
         <h2 className='text-white-100 font-["Bruno_Ace"] uppercase'>Aeris</h2>
         <div className="space-x-3">

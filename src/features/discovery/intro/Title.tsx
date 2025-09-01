@@ -1,16 +1,11 @@
-import { type ReactNode } from 'react';
-
-interface TitleProps {
-  children: ReactNode;
-}
-const Title = ({ children }: TitleProps) => {
+const Title = () => {
   return (
     <h1
       className={
-        'to-white-100 desktop-1:text-4xl desktop-2:text-5xl tablet:text-3xl tablet:w-[16ch] tablet:text-left tablet:mb-[6.4rem] mb-[4.4rem] w-full bg-linear-to-b from-blue-100 bg-clip-text text-center font-["Bruno_Ace"] text-xl text-transparent'
+        'tablet:mb-[6.4rem] tablet:text-3xl desktop-1:text-5xl tablet:text-left text-white-100 mb-[4.4rem] w-[16ch] text-center font-["Bruno_Ace"] text-xl'
       }
     >
-      {children}
+      PRECISION, SOPHISTICATION, AND DURABILITY
     </h1>
   );
 };

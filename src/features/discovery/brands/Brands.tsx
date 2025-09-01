@@ -23,7 +23,7 @@ const Brands = () => {
       image: './image-brand-2.jpg',
     },
     {
-      nameBrand: 'g-shock',
+      nameBrand: 'casio',
       descriptionBrand:
         'Explore top brands known for quality, style, and timeless design.',
       image: './image-brand-3.jpg',
@@ -36,12 +36,11 @@ const Brands = () => {
     },
   ];
   return (
-    <section className="tablet:px-0 z-1 col-span-full mt-4 px-4">
+    <section className="tablet:px-0 tablet:mt-16 z-1 col-span-full px-4">
       <Swiper
         modules={[EffectFade]}
         effect="fade"
         className="relative h-fit"
-        allowTouchMove={false}
         spaceBetween={32}
         onSwiper={(swiper) => setSwiper(swiper)}
         onActiveIndexChange={(index) => setActiveIndex(index.activeIndex)}
