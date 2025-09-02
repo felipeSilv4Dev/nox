@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import LinksNavHeader from './LinksNavHeader';
 
-const styles = 'w-full text-x font-[Assistant] font-semibold capitalize block';
+const styles =
+  'w-full text-base font-["Assistant"] font-semibold capitalize block';
 
 const MenuNavHeader = () => {
   const [open, setOpen] = useState(false);

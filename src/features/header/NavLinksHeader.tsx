@@ -1,9 +1,6 @@
 import { NavLink } from 'react-router';
 import MenuNavHeader from './MenuNavHeader';
 
-interface isActiveProps {
-  isActive: boolean;
-}
 const NavLinksHeader = () => {
   return (
     <nav>
@@ -11,18 +8,14 @@ const NavLinksHeader = () => {
         <MenuNavHeader />
         <NavLink
           to={'/'}
-          className={`desktop-1:block desktop-1:text-[18px] hover:text-white-100 desktop-2:text-xl text-white-600 hidden font-[Assistant] font-semibold transition-all duration-200 ${({
-            isActive,
-          }: isActiveProps) => (isActive ? 'text-white-100' : '')}`}
+          className={`aria-[current=page]:text-white-100 text-white-600 desktop-1:block desktop-1:text-[18px] hover:text-white-100 desktop-2:text-xl hidden font-[Assistant] font-semibold transition-all duration-200`}
         >
           Discovery
         </NavLink>
 
         <NavLink
           to={'/collection'}
-          className={`desktop-1:block desktop-1:text-[18px] hover:text-white-100 desktop-2:text-xl text-white-600 hidden font-[Assistant] font-semibold transition-all duration-200 ${({
-            isActive,
-          }: isActiveProps) => (isActive ? 'text-white-100 hidden' : '')}`}
+          className={`aria-[current=page]:text-white-100 text-white-600 desktop-1:block desktop-1:text-[18px] hover:text-white-100 desktop-2:text-xl hidden font-[Assistant] font-semibold transition-all duration-200`}
         >
           Collection
         </NavLink>

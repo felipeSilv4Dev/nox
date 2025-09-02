@@ -9,9 +9,9 @@ const Footer = () => {
     'desktop-1:py-20 desktop-1:w-[80%] desktop-2:w-[76%] desktop-1:grid-cols-[repeat(12,1fr)]';
 
   return (
-    <footer className="bg-black-800 mt-16">
+    <footer className="bg-black-800 relative z-1 mt-16">
       <section
-        className={`${tablet} ${desktop} relative mx-auto grid max-w-[1600px] grid-cols-[repeat(4,1fr)] items-end gap-8 px-4 py-12`}
+        className={`${tablet} ${desktop} mx-auto grid max-w-[1600px] grid-cols-[repeat(4,1fr)] items-end gap-8 px-4 py-12`}
       >
         <HeaderFooter />
         <SocialsFooter />
