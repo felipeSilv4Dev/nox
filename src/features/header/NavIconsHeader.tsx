@@ -10,7 +10,7 @@ const NavIconsHeader = () => {
         <InputSearch />
       </div>
 
-      <Icon>
+      <Icon to="/car">
         <FeatherIcon.ShoppingCart />
       </Icon>
 

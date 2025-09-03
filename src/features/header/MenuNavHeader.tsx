@@ -1,6 +1,6 @@
 import * as FeatherIcon from 'feather-icons-react';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
+import { NavLink, useLocation } from 'react-router';
 import LinksNavHeader from './LinksNavHeader';
 
 const styles =
@@ -22,15 +22,17 @@ const MenuNavHeader = () => {
 
   return (
     <div className="*:desktop-1:hidden relative m-0">
-      <p
-        className={`${styles} text-white-100 flex cursor-pointer items-end justify-center capitalize`}
+      <NavLink
+        to={nameLink === 'discovery' ? '/' : '/collection'}
+        onClickCapture={(e) => e.preventDefault()}
+        className={`${styles} aria-[current=page]:text-white-100 text-white-600 flex cursor-pointer items-end justify-center capitalize`}
         onClick={handleOpenNav}
       >
         {nameLink}
         <FeatherIcon.ChevronUp
           className={`${open ? 'rotate-0' : 'rotate-180'} w-fit duration-75 ease-in`}
         />
-      </p>
+      </NavLink>
       <LinksNavHeader onOpen={handleOpenNav} open={open} />
     </div>
   );

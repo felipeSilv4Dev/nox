@@ -36,7 +36,7 @@ const Brands = () => {
     },
   ];
   return (
-    <section className="tablet:px-0 tablet:mt-16 relative z-1 col-span-full px-4">
+    <section className="tablet:px-0 tablet:mt-16 relative z-1 col-span-full mt-12 px-4">
       <Swiper
         modules={[EffectFade]}
         effect="fade"

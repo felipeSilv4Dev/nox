@@ -4,6 +4,7 @@ import AppLayout from './ui/AppLayout';
 import Discovery from './ui/Discovery';
 import Collection from './ui/Collection';
 import ErrorPage from './ui/ErrorPage';
+import Car from './ui/Car';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/collection',
         element: <Collection />,
+      },
+      {
+        path: '/car',
+        element: <Car />,
       },
     ],
   },
