@@ -1,12 +1,11 @@
-import { NavLink } from 'react-router'
+import ContainerError from '../features/error/ContainerError';
 
 const ErrorPage = () => {
-	return (
-		<div>page not found
+  return (
+    <section className="bg-black-900 text-white-100 h-screen font-['Assistant']">
+      <ContainerError />
+    </section>
+  );
+};
 
-			<NavLink to={'/'}>back to Home</NavLink>
-		</div>
-	)
-}
-
-export default ErrorPage
+export default ErrorPage;

@@ -3,8 +3,8 @@ import CheckoutTotal from './CheckoutTotal';
 
 const Checkout = () => {
   return (
-    <div className="bg-black-700 mt-8 space-y-8 px-4 py-8">
-      <h2 className='border-black-500 border-b-2 pb-4 font-["Bruno_Ace"]'>
+    <div className="bg-black-700 desktop-1:m-0 desktop-1:flex desktop-1:flex-col desktop-1:justify-between mt-8 space-y-8 px-4 py-8">
+      <h2 className='border-black-500 tablet:text-xl border-b-2 pb-4 font-["Bruno_Ace"]'>
         cart totals
       </h2>
 

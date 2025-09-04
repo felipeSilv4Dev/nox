@@ -12,12 +12,12 @@ const HeaderCar = () => {
     <div className="px-4">
       <span
         onClick={handleToPrevPage}
-        className="text-white-600 flex w-fit py-4"
+        className="text-white-600 tablet:text-xl hover:text-white-300 flex w-fit cursor-pointer items-center py-4 transition-all duration-75 ease-linear"
       >
         <FeatherIcon.ChevronLeft />
         back
       </span>
-      <h1 className='font-["Bruno_Ace"] text-2xl'>YOUR CAR</h1>
+      <h1 className='tablet:text-3xl font-["Bruno_Ace"] text-2xl'>YOUR CAR</h1>
     </div>
   );
 };

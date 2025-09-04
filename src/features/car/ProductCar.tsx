@@ -5,11 +5,11 @@ import TrashProduct from './TrashProduct';
 
 const ProductCar = () => {
   return (
-    <article className="border-black-500 flex gap-2 not-last:border-b-1 not-last:pb-4">
+    <article className="border-black-500 tablet:items-center flex gap-2 not-last:border-b-1 not-last:pb-4">
       <ImageProduct />
       <InfoProduct />
 
-      <div className="flex flex-col items-end justify-between">
+      <div className="tablet:flex-row tablet:gap-4 flex flex-col items-end justify-between">
         <QuantityProduct />
         <TrashProduct />
       </div>

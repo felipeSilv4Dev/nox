@@ -4,19 +4,19 @@ import IconQuantityProduct from './IconQuantityProduct';
 
 const QuantityProduct = () => {
   return (
-    <div className="flex h-fit items-stretch">
+    <div className="flex">
       <IconQuantityProduct>
-        <FeatherIcon.ChevronUp className="h-4 w-4" />
+        <FeatherIcon.ChevronUp className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
 
-      <div className="border-black-500 border-y-1 p-2">
+      <div className="border-black-500 flex h-fit w-fit items-center justify-center border-y-1 p-2">
         <FlipNumbers
-          height={14}
-          width={14}
+          height={window.innerWidth >= 1024 ? 40 : 16}
+          width={window.innerWidth >= 1024 ? 40 : 16}
           color=""
           numberStyle={{
             textAlign: 'center',
-            fontSize: '16px',
+            fontSize: window.innerWidth >= 1024 ? '8px' : '12px',
             color: 'var(--color-white-100)',
           }}
           play
@@ -26,7 +26,7 @@ const QuantityProduct = () => {
       </div>
 
       <IconQuantityProduct>
-        <FeatherIcon.ChevronDown className="h-4 w-4" />
+        <FeatherIcon.ChevronDown className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
     </div>
   );

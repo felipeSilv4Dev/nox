@@ -6,7 +6,7 @@ interface CheckoutInfoProps {
 const CheckoutInfo = (infos: CheckoutInfoProps) => {
   return (
     <div
-      className={`${infos.styles} text-black-100 flex items-center justify-between font-bold`}
+      className={`${infos.styles} text-black-100 tablet:text-[18px] flex items-center justify-between font-bold`}
     >
       <h3 className="capitalize">{infos.title}</h3>
       <p className="text-white-100 capitalize">{infos.value}</p>
