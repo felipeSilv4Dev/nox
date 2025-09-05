@@ -5,6 +5,7 @@ import Discovery from './ui/Discovery';
 import Collection from './ui/Collection';
 import ErrorPage from './ui/ErrorPage';
 import Car from './ui/Car';
+import PageProduct from './ui/PageProduct';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/car',
         element: <Car />,
+      },
+      {
+        path: '/product/:slug',
+        element: <PageProduct />,
       },
     ],
   },
