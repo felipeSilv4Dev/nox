@@ -2,7 +2,7 @@ const Title = () => {
   return (
     <h1
       className={
-        'tablet:mb-[6.4rem] tablet:text-3xl desktop-1:text-5xl tablet:text-left text-white-100 mb-[4.4rem] w-[16ch] text-center font-["Bruno_Ace"] text-2xl'
+        'tablet:mb-[6.4rem] tablet:text-3xl desktop-1:text-5xl tablet:text-left text-white-100 mobile-1:text-2xl mb-[4.4rem] w-[16ch] text-center font-["Bruno_Ace"] text-xl'
       }
     >
       PRECISION, SOPHISTICATION, AND DURABILITY

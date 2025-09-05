@@ -12,7 +12,7 @@ const InputContactFooter = () => {
         placeholder="send email"
         className="placeholder:text-black-100 w-full focus:outline-none"
       />
-      <button className="text-white-100 desktop-1:p-4 block w-fit bg-blue-600 p-3">
+      <button className="text-white-100 desktop-1:p-4 tablet:cursor-pointer tablet:hover:bg-blue-500 block w-fit bg-blue-600 p-3 transition-all duration-75 ease-linear">
         <FeatherIcon.Send />
       </button>
     </label>
