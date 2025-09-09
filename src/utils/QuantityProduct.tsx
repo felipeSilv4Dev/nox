@@ -1,11 +1,40 @@
 import * as FeatherIcon from 'feather-icons-react';
 import FlipNumbers from 'react-flip-numbers';
 import IconQuantityProduct from './IconQuantityProduct';
+import useGlobalStorage from './useGlobalStorage';
+import { useState } from 'react';
 
 const QuantityProduct = () => {
+  const { setQuantity, quantityProduct } = useGlobalStorage((state) => state);
+  const [product, setProduct] = useState(() => {
+    const product = quantityProduct('product-1');
+    if (!product) return 1;
+    const { quantity } = product;
+    return quantity;
+  });
+
+  function handleDecrementQuantity() {
+    const numberQuantity = product > 1 ? product - 1 : 1;
+
+    setQuantity({
+      nameId: 'product-1',
+      quantity: numberQuantity,
+    });
+    setProduct(numberQuantity);
+  }
+
+  function handleIncrementQuantity() {
+    const numberQuantity = product + 1;
+    setQuantity({
+      nameId: 'product-1',
+      quantity: numberQuantity,
+    });
+    setProduct(numberQuantity);
+  }
+
   return (
     <div className="flex">
-      <IconQuantityProduct>
+      <IconQuantityProduct onClick={handleIncrementQuantity}>
         <FeatherIcon.ChevronUp className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
 
@@ -21,11 +50,11 @@ const QuantityProduct = () => {
           }}
           play
           perspective={100}
-          numbers="1"
+          numbers={String(product)}
         />
       </div>
 
-      <IconQuantityProduct>
+      <IconQuantityProduct onClick={handleDecrementQuantity}>
         <FeatherIcon.ChevronDown className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
     </div>

@@ -1,7 +1,8 @@
 import * as FeatherIcon from 'feather-icons-react';
+import type { ProductProps } from '../../utils/useGlobalStorage';
 
-const ReviewProduct = () => {
-  const stars = Array.from({ length: 5 });
+const ReviewProduct = ({ product }: { product: ProductProps }) => {
+  const stars = Array.from({ length: product.review });
 
   return (
     <div className="flex items-center justify-between">
@@ -12,7 +13,7 @@ const ReviewProduct = () => {
       </div>
 
       <h3 className="text-white-100 font-['Assistant'] text-xs font-bold uppercase">
-        lacoste
+        {product.brand}
       </h3>
     </div>
   );

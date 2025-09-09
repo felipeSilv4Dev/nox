@@ -1,5 +1,4 @@
-import Button from '../../../utils/Button';
-
+import Button from './Button';
 import Title from './Title';
 
 const Intro = () => {
