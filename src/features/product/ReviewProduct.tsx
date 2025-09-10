@@ -2,13 +2,16 @@ import * as FeatherIcon from 'feather-icons-react';
 import type { ProductProps } from '../../utils/useGlobalStorage';
 
 const ReviewProduct = ({ product }: { product: ProductProps }) => {
-  const stars = Array.from({ length: product.review });
+  const stars = Array.from({ length: 5 });
 
   return (
     <div className="flex items-center justify-between">
-      <div className="*:text-black-300 flex items-center">
+      <div className="flex items-center">
         {stars.map((_, index) => (
-          <FeatherIcon.Star key={index} className="h-4" />
+          <FeatherIcon.Star
+            key={index}
+            className={`h-4 ${index < product.review ? 'text-blue-400' : 'text-black-300'}`}
+          />
         ))}
       </div>
 

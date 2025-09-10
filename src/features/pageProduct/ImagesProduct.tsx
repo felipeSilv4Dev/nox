@@ -1,22 +1,24 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import useGlobalStorage from '../../utils/useGlobalStorage';
 
 const ImagesProduct = () => {
-  return (
-    <Swiper
-      className="h-110 w-full"
-      spaceBetween={16}
-      slidesPerView={1}
-      centeredSlides
-    >
-      <SwiperSlide>
-        <div className='h-full w-full bg-[url("../product-1.jpg")] bg-cover bg-center bg-no-repeat' />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className='h-full w-full bg-[url("../product-1.jpg")] bg-cover bg-center bg-no-repeat' />
-      </SwiperSlide>
-    </Swiper>
-  );
+  const { product } = useGlobalStorage((state) => state);
+  if (product)
+    return (
+      <Swiper
+        className="h-110 w-full"
+        spaceBetween={16}
+        slidesPerView={1}
+        centeredSlides
+      >
+        <SwiperSlide>
+          <div
+            style={{ backgroundImage: `url(${product.image})` }}
+            className="h-full w-full bg-cover bg-center bg-no-repeat"
+          />
+        </SwiperSlide>
+      </Swiper>
+    );
 };
 
 export default ImagesProduct;

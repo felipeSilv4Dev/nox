@@ -17,7 +17,7 @@ const QuantityProduct = () => {
     const numberQuantity = product > 1 ? product - 1 : 1;
 
     setQuantity({
-      nameId: 'product-1',
+      slug: 'product-1',
       quantity: numberQuantity,
     });
     setProduct(numberQuantity);
@@ -26,7 +26,7 @@ const QuantityProduct = () => {
   function handleIncrementQuantity() {
     const numberQuantity = product + 1;
     setQuantity({
-      nameId: 'product-1',
+      slug: 'product-1',
       quantity: numberQuantity,
     });
     setProduct(numberQuantity);

@@ -30,12 +30,11 @@ const ContainerProducts = () => {
   }
 
   useEffect(() => {
-    const itemsProducts: QuantityKeys[] = storage.products.map((_, index) => ({
-      nameId: `product-${index}`,
+    const itemsProducts: QuantityKeys[] = storage.products.map((product) => ({
+      slug: `${product.slug}`,
       quantity: 1,
     }));
 
-    // storage.createCar();
     storage.handleSaveLocalStorage(itemsProducts);
   }, [storage]);
 

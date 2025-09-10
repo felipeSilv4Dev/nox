@@ -9,7 +9,7 @@ import InfoImage from './InfoImage';
 const Product = ({ product }: { product: ProductProps }) => {
   return (
     <Link
-      to={'/product/name-product'}
+      to={`/product/${product.slug}`}
       className="flex h-fit w-full flex-2 cursor-pointer flex-col justify-between gap-3"
     >
       <ImageProduct src={product.image}>

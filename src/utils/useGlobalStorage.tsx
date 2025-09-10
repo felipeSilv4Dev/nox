@@ -5,8 +5,10 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Classic Brown',
-    price: '$350',
-    oldPrice: '$420',
+    slug: 'classic-brown',
+    model: 'AT30-SE',
+    price: '$ 350',
+    oldPrice: '$ 420',
     brand: 'Lacoste',
     review: 4,
     details: 'Stainless Steel · Genuine Leather · Sapphire Glass',
@@ -14,17 +16,21 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Gold Prestige',
-    price: '$1,200',
-    oldPrice: '$1,450',
+    slug: 'gold-prestige',
+    model: 'AT31-SE',
+    price: '$ 1,200',
+    oldPrice: '$ 1,450',
     brand: 'Cartier',
-    review: 5,
+    review: 1,
     details: 'Stainless Steel · Genuine Leather · Sapphire Glass',
   },
   {
     image: './product-1.jpg',
     name: 'Digital Sport',
-    price: '$180',
-    oldPrice: '$250',
+    slug: 'digital-sport',
+    model: 'AT32-SE',
+    price: '$ 180',
+    oldPrice: '$ 250',
     brand: 'Casio',
     review: 3,
     details: 'Resin Strap · Mineral Glass · Quartz movement god',
@@ -32,8 +38,10 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Submariner Black',
-    price: '$2,800',
-    oldPrice: '$3,200',
+    slug: 'submariner-black',
+    model: 'AT33-SE',
+    price: '$ 2,800',
+    oldPrice: '$ 3,200',
     brand: 'Rolex',
     review: 5,
     details: 'Oystersteel · Ceramic Bezel · Perpetual Movement',
@@ -41,8 +49,10 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Sport Active',
-    price: '$400',
-    oldPrice: '$500',
+    slug: 'sport-active',
+    model: 'AT34-SE',
+    price: '$ 400',
+    oldPrice: '$ 500',
     brand: 'Lacoste',
     review: 2,
     details: 'Resin Strap · Mineral Glass · Quartz movement god',
@@ -50,8 +60,10 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Elegance Leather',
-    price: '$950',
-    oldPrice: '$1,200',
+    slug: 'elegance-leather',
+    model: 'AT35-SE',
+    price: '$ 950',
+    oldPrice: '$ 1,200',
     brand: 'Cartier',
     review: 4,
     details: '18k Gold · Leather Strap · Automatic Movement · Resin Strap',
@@ -59,8 +71,10 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Illuminator',
-    price: '$220',
-    oldPrice: '$300',
+    slug: 'illuminator',
+    model: 'AT36-SE',
+    price: '$ 220',
+    oldPrice: '$ 300',
     brand: 'Casio',
     review: 5,
     details: 'Digital Display · Resin Strap · LED Light · Mineral Glass',
@@ -68,17 +82,21 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Platinum Chrono',
-    price: '$3,500',
-    oldPrice: '$3,900',
+    slug: 'platinum-chrono',
+    model: 'AT37-SE',
+    price: '$ 3,500',
+    oldPrice: '$ 3,900',
     brand: 'Rolex',
-    review: 5,
+    review: 3,
     details: 'Platinum Case · Sapphire Crystal · Chronometer',
   },
   {
     image: './product-1.jpg',
     name: 'Nylon Edition',
-    price: '$310',
-    oldPrice: '$370',
+    slug: 'nylon-edition',
+    model: 'AT38-SE',
+    price: '$ 310',
+    oldPrice: '$ 370',
     brand: 'Lacoste',
     review: 3,
     details: 'Digital Display · Resin Strap · LED Light · Mineral Glass',
@@ -86,21 +104,26 @@ const products = [
   {
     image: './product-1.jpg',
     name: 'Rose Gold Swiss',
-    price: '$1,100',
-    oldPrice: '$1,400',
+    slug: 'rose-gold-swiss',
+    model: 'AT39-SE',
+    price: '$ 1,100',
+    oldPrice: '$ 1,400',
     brand: 'Cartier',
     review: 4,
     details: 'Chronometer · Rose Gold · Sapphire Glass · Swiss Made',
   },
 ];
+
 export declare interface QuantityKeys {
-  nameId: string;
+  slug: string;
   quantity: number;
 }
 
 export declare interface ProductProps {
   image: string;
   name: string;
+  slug: string;
+  model: string;
   price: string;
   oldPrice: string;
   brand: string;
@@ -127,6 +150,9 @@ interface useGlobalProps {
   getProductCar: (value: string) => ProductProps | null;
   // PRODUCTS
   products: ProductProps[];
+  product: null | ProductProps;
+  setProduct: (value: ProductProps) => void;
+  getProduct: (value: string) => ProductProps | null;
 }
 
 function handleSaveLocalStorage(value: QuantityKeys[]) {
@@ -147,18 +173,18 @@ function handleUpdateQuantityProducts(value: QuantityKeys) {
 
   if (products) {
     const newProducts = products.filter(
-      (product) => product.nameId !== value.nameId,
+      (product) => product.slug !== value.slug,
     );
 
     handleSaveLocalStorage([...newProducts, value]);
   }
 }
 
-function getQuantityProduct(nameId: string) {
+function getQuantityProduct(slug: string) {
   const products = handleGetAllQuantityProducts();
 
   if (products) {
-    const [product] = products.filter((product) => product.nameId === nameId);
+    const [product] = products.filter((product) => product.slug === slug);
     return product;
   }
   return null;
@@ -177,10 +203,10 @@ function handleGetAllProductsCar(): ProductProps[] | null {
   return null;
 }
 
-function handleGetProductCar(nameId: string) {
+function handleGetProductCar(slug: string) {
   const allProducts = handleGetAllProductsCar();
   if (allProducts) {
-    const [product] = allProducts.filter((product) => product.name === nameId);
+    const [product] = allProducts.filter((product) => product.name === slug);
     return product;
   }
   return null;
@@ -191,16 +217,17 @@ function handleUpdateProductsCar(product: ProductProps) {
   if (!allProducts) handleAddToCar([product]);
   if (allProducts) handleAddToCar([...allProducts, product]);
 }
-function handleRemoveProductCar(nameId: string) {
+function handleRemoveProductCar(slug: string) {
   const allProducts = handleGetAllProductsCar();
   if (allProducts) {
-    const newProducts = allProducts.filter(
-      (product) => product.name !== nameId,
-    );
+    const newProducts = allProducts.filter((product) => product.name !== slug);
     handleAddToCar(newProducts);
   }
 }
-
+function handleGetProduct(slug: string) {
+  const [product] = products.filter((product) => product.slug === slug);
+  return product ? product : null;
+}
 const useGlobalStorage = create<useGlobalProps>((set) => ({
   open: false,
   setOpen: (open) => set({ open: open }),
@@ -222,7 +249,10 @@ const useGlobalStorage = create<useGlobalProps>((set) => ({
   removeFromCar: (value) => handleRemoveProductCar(value),
 
   // PRODUCTS
+  getProduct: (value) => handleGetProduct(value),
   products: products,
+  product: null,
+  setProduct: (value) => set({ product: value }),
 }));
 
 export default useGlobalStorage;

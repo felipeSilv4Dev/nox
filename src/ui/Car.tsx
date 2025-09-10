@@ -9,7 +9,7 @@ const Car = () => {
   const storage = useGlobalStorage((state) => state);
   const products = storage.getAllProductsCar();
 
-  const [productsCar] = useState(() => {
+  const [productsCar, setProductsCar] = useState(() => {
     return products && products.length > 0 ? products : null;
   });
 
@@ -22,7 +22,11 @@ const Car = () => {
         <>
           <div className="tablet:pb-20 tablet:max-h-[calc(40vh)] desktop-1:max-h-[calc(60vh)] desktop-1:col-1 max-h-[calc(35vh)] space-y-4 overflow-y-scroll mask-b-from-80% px-4 pt-4 pb-12">
             {productsCar.map((product) => (
-              <ProductCar key={product.name} product={product} />
+              <ProductCar
+                key={product.name}
+                product={product}
+                setProductsCar={setProductsCar}
+              />
             ))}
           </div>
           <Checkout />

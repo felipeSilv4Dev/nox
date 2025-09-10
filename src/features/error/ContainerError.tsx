@@ -1,9 +1,9 @@
+import type { ReactNode } from 'react';
 import ButtonHomeError from './ButtonHomeError';
 import ImageError from './ImageError';
 import LightError from './LightError';
-import TitleError from './TitleError';
 
-const ContainerError = () => {
+const ContainerError = ({ children }: { children: ReactNode }) => {
   const tablet =
     'tablet:pt-0 tablet:w-[94%] tablet:grid-cols-[repeat(8,1fr)] tablet:grid-rows-[repeat(8,auto)]';
   const desktop =
@@ -15,11 +15,8 @@ const ContainerError = () => {
     >
       <div className="tablet:row-end-5 relative z-1 col-span-full flex flex-col items-center justify-center px-4">
         <ImageError />
-        <TitleError />
+        {children}
         <LightError />
-        <p className="text-black-100 tablet:text-2xl mb-4 text-xl capitalize">
-          Page not Found
-        </p>
         <ButtonHomeError />
       </div>
     </main>
