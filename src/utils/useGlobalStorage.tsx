@@ -131,14 +131,14 @@ export declare interface ProductProps {
   details: string;
 }
 
-interface useGlobalProps {
+export declare interface useGlobalProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   modelsProduct: SwiperType | null;
   setModelsProduct: (value: SwiperType) => void;
   SetActiveModelsProduct: (value: number) => void;
   activeModelsProduct: number;
-  quantityAllProducts: QuantityKeys[] | null;
+  getAllQuantityProducts: () => QuantityKeys[] | null;
   setQuantity: (value: QuantityKeys) => void;
   quantityProduct: (value: string) => QuantityKeys | null;
   handleSaveLocalStorage: (value: QuantityKeys[]) => void;
@@ -172,11 +172,11 @@ function handleUpdateQuantityProducts(value: QuantityKeys) {
   const products = handleGetAllQuantityProducts();
 
   if (products) {
-    const newProducts = products.filter(
+    const productFiltered = products.filter(
       (product) => product.slug !== value.slug,
     );
 
-    handleSaveLocalStorage([...newProducts, value]);
+    handleSaveLocalStorage([...productFiltered, value]);
   }
 }
 
@@ -237,7 +237,7 @@ const useGlobalStorage = create<useGlobalProps>((set) => ({
 
   // QUANTITY
   quantityProduct: (value) => getQuantityProduct(value),
-  quantityAllProducts: handleGetAllQuantityProducts(),
+  getAllQuantityProducts: () => handleGetAllQuantityProducts(),
   setQuantity: (value) => handleUpdateQuantityProducts(value),
   activeModelsProduct: 0,
   handleSaveLocalStorage,

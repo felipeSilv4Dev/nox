@@ -1,14 +1,7 @@
 const ImageError = () => {
-  // return (
-  //   <img
-  //     src="./icon-page-error.svg"
-  //     alt="image error page"
-  //     className="tablet:h-100 h-60"
-  //   />
-  // );
   return (
     <svg
-      className="tablet:h-100 h-60"
+      className="h-60"
       viewBox="0 0 983 764"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

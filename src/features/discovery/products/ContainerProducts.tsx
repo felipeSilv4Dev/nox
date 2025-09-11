@@ -30,6 +30,8 @@ const ContainerProducts = () => {
   }
 
   useEffect(() => {
+    const quantityProducts = storage.getAllQuantityProducts();
+    if (quantityProducts) return;
     const itemsProducts: QuantityKeys[] = storage.products.map((product) => ({
       slug: `${product.slug}`,
       quantity: 1,

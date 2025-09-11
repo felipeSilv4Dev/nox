@@ -3,38 +3,21 @@ import FlipNumbers from 'react-flip-numbers';
 import IconQuantityProduct from './IconQuantityProduct';
 import useGlobalStorage from './useGlobalStorage';
 import { useState } from 'react';
+import {
+  handleDecrementQuantity,
+  handleIncrementQuantity,
+  handleInitialState,
+} from '../services/utils/QuantityServices';
 
 const QuantityProduct = () => {
-  const { setQuantity, quantityProduct } = useGlobalStorage((state) => state);
-  const [product, setProduct] = useState(() => {
-    const product = quantityProduct('product-1');
-    if (!product) return 1;
-    const { quantity } = product;
-    return quantity;
-  });
-
-  function handleDecrementQuantity() {
-    const numberQuantity = product > 1 ? product - 1 : 1;
-
-    setQuantity({
-      slug: 'product-1',
-      quantity: numberQuantity,
-    });
-    setProduct(numberQuantity);
-  }
-
-  function handleIncrementQuantity() {
-    const numberQuantity = product + 1;
-    setQuantity({
-      slug: 'product-1',
-      quantity: numberQuantity,
-    });
-    setProduct(numberQuantity);
-  }
+  const storage = useGlobalStorage((state) => state);
+  const [count, setCount] = useState(() => handleInitialState(storage));
 
   return (
     <div className="flex">
-      <IconQuantityProduct onClick={handleIncrementQuantity}>
+      <IconQuantityProduct
+        onClick={() => handleIncrementQuantity({ storage, count, setCount })}
+      >
         <FeatherIcon.ChevronUp className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
 
@@ -50,11 +33,13 @@ const QuantityProduct = () => {
           }}
           play
           perspective={100}
-          numbers={String(product)}
+          numbers={String(count)}
         />
       </div>
 
-      <IconQuantityProduct onClick={handleDecrementQuantity}>
+      <IconQuantityProduct
+        onClick={() => handleDecrementQuantity({ storage, count, setCount })}
+      >
         <FeatherIcon.ChevronDown className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
     </div>

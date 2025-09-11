@@ -11,12 +11,12 @@ const ContainerError = ({ children }: { children: ReactNode }) => {
 
   return (
     <main
-      className={`${tablet} ${desktop} tablet:gap-8 relative mx-auto grid h-full max-w-[1600px] grid-cols-[repeat(4,1fr)] grid-rows-1 gap-x-8`}
+      className={`${tablet} ${desktop} tablet:gap-8 relative mx-auto grid h-screen max-w-[1600px] grid-cols-[repeat(4,1fr)] grid-rows-1 gap-x-8`}
     >
-      <div className="tablet:row-end-5 relative z-1 col-span-full flex flex-col items-center justify-center px-4">
+      <div className="z-1 col-span-full row-span-full flex h-full flex-col items-center justify-center px-4">
+        <LightError />
         <ImageError />
         {children}
-        <LightError />
         <ButtonHomeError />
       </div>
     </main>
