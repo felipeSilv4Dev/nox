@@ -12,10 +12,11 @@ interface propsHandleButtons {
 
 interface propsInitialState {
   storage: useGlobalProps;
-  product: ProductProps;
+  product: ProductProps | null;
 }
 
 export function handleSetStateButton(props: propsInitialState) {
+  if (!props.product) return false;
   const productCar = props.storage.getProductCar(props.product.name);
   if (productCar) return true;
   else return false;

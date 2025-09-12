@@ -1,7 +1,7 @@
 import * as FeatherIcon from 'feather-icons-react';
 import FlipNumbers from 'react-flip-numbers';
 import IconQuantityProduct from './IconQuantityProduct';
-import useGlobalStorage from './useGlobalStorage';
+import useGlobalStorage, { type ProductProps } from './useGlobalStorage';
 import { useState } from 'react';
 import {
   handleDecrementQuantity,
@@ -9,14 +9,18 @@ import {
   handleInitialState,
 } from '../services/utils/QuantityServices';
 
-const QuantityProduct = () => {
+const QuantityProduct = ({ product }: { product: ProductProps }) => {
   const storage = useGlobalStorage((state) => state);
-  const [count, setCount] = useState(() => handleInitialState(storage));
+  const [count, setCount] = useState(() =>
+    handleInitialState(storage, product),
+  );
 
   return (
     <div className="flex">
       <IconQuantityProduct
-        onClick={() => handleIncrementQuantity({ storage, count, setCount })}
+        onClick={() =>
+          handleIncrementQuantity({ storage, count, setCount, product })
+        }
       >
         <FeatherIcon.ChevronUp className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>
@@ -38,7 +42,9 @@ const QuantityProduct = () => {
       </div>
 
       <IconQuantityProduct
-        onClick={() => handleDecrementQuantity({ storage, count, setCount })}
+        onClick={() =>
+          handleDecrementQuantity({ storage, count, setCount, product })
+        }
       >
         <FeatherIcon.ChevronDown className="tablet:h-6 tablet:w-6 h-4 w-4" />
       </IconQuantityProduct>

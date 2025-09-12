@@ -1,9 +1,11 @@
 import { useRouteError } from 'react-router';
 import ContainerError from '../features/error/ContainerError';
 import TitleError from '../features/error/TitleError';
+import useToTop from '../utils/useToTop';
 
 const ErrorPage = () => {
   const error = useRouteError() as Response;
+  useToTop();
 
   return (
     <section className="bg-black-900 text-white-100 h-screen font-['Assistant']">

@@ -1,24 +1,31 @@
-import type { useGlobalProps } from '../../utils/useGlobalStorage';
+import type {
+  ProductProps,
+  useGlobalProps,
+} from '../../utils/useGlobalStorage';
 type propsIncrementAndDecrement = {
   storage: useGlobalProps;
   count: number;
+  product: ProductProps;
   setCount: React.Dispatch<number>;
 };
 interface updateQuantityProps extends propsIncrementAndDecrement {
   countTotal: number;
 }
-export function handleInitialState(storage: useGlobalProps) {
-  if (!storage.product) return 1;
-  const productQuantity = storage.quantityProduct(storage.product.slug);
+export function handleInitialState(
+  storage: useGlobalProps,
+  product: ProductProps,
+) {
+  if (!product) return 1;
+  const productQuantity = storage.quantityProduct(product.slug);
   if (!productQuantity) return 1;
   return productQuantity.quantity;
 }
 
 function handleUpdateQuantity(props: updateQuantityProps) {
-  if (!props.storage.product) return;
+  if (!props.product) return;
 
   props.storage.setQuantity({
-    slug: props.storage.product.slug,
+    slug: props.product.slug,
     quantity: props.countTotal,
   });
   props.setCount(props.countTotal);

@@ -7,6 +7,7 @@ import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import useGlobalStorage from '../utils/useGlobalStorage';
 import { Loader } from 'feather-icons-react';
+import useToTop from '../utils/useToTop';
 // import Loader from '../utils/Loader';
 
 const PageProduct = () => {
@@ -21,6 +22,8 @@ const PageProduct = () => {
     setProduct(product);
     setIsLoading(false);
   }, [slug, setProduct, getProduct]);
+
+  useToTop();
 
   if (error) {
     throw new Response('', {

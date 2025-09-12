@@ -4,6 +4,7 @@ import HeaderCar from '../features/car/HeaderCar';
 import useGlobalStorage from '../utils/useGlobalStorage';
 import Checkout from '../features/car/Checkout';
 import ProductCar from '../features/car/ProductCar';
+import useToTop from '../utils/useToTop';
 
 const Car = () => {
   const storage = useGlobalStorage((state) => state);
@@ -13,8 +14,10 @@ const Car = () => {
     return products && products.length > 0 ? products : null;
   });
 
+  useToTop();
+
   return (
-    <section className="desktop-1:grid desktop-1:grid-cols-[1fr_440px] col-span-full font-['Assistant'] text-white">
+    <section className="desktop-1:grid desktop-1:grid-cols-[1fr_440px] text-white-100 col-span-full font-['Assistant']">
       <HeaderCar />
       {!productsCar && <EmptyCar />}
 

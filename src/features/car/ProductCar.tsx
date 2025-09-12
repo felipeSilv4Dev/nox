@@ -25,11 +25,11 @@ const ProductCar = ({ product, setProductsCar }: ProductCar) => {
 
   return (
     <article className="border-black-500 tablet:items-center flex gap-2 not-last:border-b-1 not-last:pb-4">
-      <ImageProduct src={product.image} />
-      <InfoProduct />
+      <ImageProduct {...product} />
+      <InfoProduct {...product} />
 
       <div className="tablet:flex-row tablet:gap-4 flex flex-col items-end justify-between">
-        <QuantityProduct />
+        <QuantityProduct product={product} />
         <TrashProduct onRemove={handleRemoveFromCar} />
       </div>
     </article>
