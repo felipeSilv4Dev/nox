@@ -29,6 +29,8 @@ function handleUpdateQuantity(props: updateQuantityProps) {
     quantity: props.countTotal,
   });
   props.setCount(props.countTotal);
+  const quantityPerProducts = props.storage.getAllQuantityProducts();
+  props.storage.setQuantityPerProduct(quantityPerProducts);
 }
 export function handleDecrementQuantity(props: propsIncrementAndDecrement) {
   const countTotal = props.count > 1 ? props.count - 1 : 1;

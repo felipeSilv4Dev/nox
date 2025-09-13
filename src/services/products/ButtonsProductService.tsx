@@ -2,6 +2,7 @@ import type {
   ProductProps,
   useGlobalProps,
 } from '../../utils/useGlobalStorage';
+import { handleSetProductsCar } from '../car/ProductCar';
 
 interface propsHandleButtons {
   e: React.MouseEvent<HTMLSpanElement>;
@@ -26,10 +27,18 @@ export function handleAddCar(props: propsHandleButtons) {
   props.e.preventDefault();
   props.storage.addToCar(props.product);
   props.setButton((state) => !state);
+  handleSetProductsCar({
+    getAllProductsCar: props.storage.getAllProductsCar,
+    setProducstInCar: props.storage.setProducstInCar,
+  });
 }
 
 export function handleRemoveFromCar(props: propsHandleButtons) {
   props.e.preventDefault();
   props.storage.removeFromCar(props.product.name);
   props.setButton((state) => !state);
+  handleSetProductsCar({
+    getAllProductsCar: props.storage.getAllProductsCar,
+    setProducstInCar: props.storage.setProducstInCar,
+  });
 }

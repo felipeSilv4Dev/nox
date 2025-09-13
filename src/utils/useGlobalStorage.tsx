@@ -138,16 +138,23 @@ export declare interface useGlobalProps {
   setModelsProduct: (value: SwiperType) => void;
   SetActiveModelsProduct: (value: number) => void;
   activeModelsProduct: number;
+
+  // QUANTITY
   getAllQuantityProducts: () => QuantityKeys[] | null;
   setQuantity: (value: QuantityKeys) => void;
   quantityProduct: (value: string) => QuantityKeys | null;
   handleSaveLocalStorage: (value: QuantityKeys[]) => void;
+  quantityPerProduct: QuantityKeys[] | null;
+  setQuantityPerProduct: (value: QuantityKeys[] | null) => void;
 
   // CAR
   addToCar: (value: ProductProps) => void;
   removeFromCar: (value: string) => void;
   getAllProductsCar: () => ProductProps[] | null;
   getProductCar: (value: string) => ProductProps | null;
+  productsInCar: ProductProps[] | null;
+  setProducstInCar: (value: ProductProps[] | null) => void;
+
   // PRODUCTS
   products: ProductProps[];
   product: null | ProductProps;
@@ -234,19 +241,25 @@ const useGlobalStorage = create<useGlobalProps>((set) => ({
   modelsProduct: null,
   setModelsProduct: (value) => set({ modelsProduct: value }),
   SetActiveModelsProduct: (value) => set({ activeModelsProduct: value }),
+  activeModelsProduct: 0,
+  handleSaveLocalStorage,
 
   // QUANTITY
   quantityProduct: (value) => getQuantityProduct(value),
   getAllQuantityProducts: () => handleGetAllQuantityProducts(),
   setQuantity: (value) => handleUpdateQuantityProducts(value),
-  activeModelsProduct: 0,
-  handleSaveLocalStorage,
+  quantityPerProduct: handleGetAllQuantityProducts(),
+  setQuantityPerProduct: (value: QuantityKeys[] | null) =>
+    set({ quantityPerProduct: value }),
 
   // CAR
   addToCar: (value) => handleUpdateProductsCar(value),
   getAllProductsCar: () => handleGetAllProductsCar(),
   getProductCar: (value) => handleGetProductCar(value),
   removeFromCar: (value) => handleRemoveProductCar(value),
+  productsInCar: handleGetAllProductsCar(),
+  setProducstInCar: (value: ProductProps[] | null) =>
+    set({ productsInCar: value }),
 
   // PRODUCTS
   getProduct: (value) => handleGetProduct(value),

@@ -24,12 +24,6 @@ const MenuOptions = () => {
         </SearchContainer>
 
         {!search && (
-          <Option to="/">
-            user
-            <FeatherIcon.User className="inline" />
-          </Option>
-        )}
-        {!search && (
           <Option to="/?page=search">
             Search Product <FeatherIcon.ChevronRight className="inline" />
           </Option>

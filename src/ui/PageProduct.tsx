@@ -34,7 +34,7 @@ const PageProduct = () => {
   if (isLoading) return <Loader />;
   if (!error)
     return (
-      <section className="text-white-100 tablet:gap-x-8 tablet:grid tablet:grid-cols-2 col-span-full row-span-full px-4 font-['Assistant']">
+      <section className="text-white-100 tablet:gap-x-8 tablet:grid tablet:grid-cols-2 relative col-span-full row-span-full px-4 font-['Assistant']">
         <div className="col-span-full">
           <ButtonBackPage />
         </div>
@@ -45,6 +45,7 @@ const PageProduct = () => {
           <DetailsProduct />
           <FooterQuantityAndPrice />
         </div>
+        <div className="tablet:h-60 tablet:w-60 tablet:blur-[9rem] absolute top-1/2 left-[20%] h-40 w-40 -translate-y-1/2 rounded-full bg-blue-600 blur-3xl"></div>
       </section>
     );
 };
