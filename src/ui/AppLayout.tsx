@@ -3,6 +3,7 @@ import Header from '../features/header/Header';
 import Footer from '../features/footer/Footer';
 import MenuOptions from '../features/menuMobile/MenuOptions';
 import CartAddNotification from '../features/cartAddNotification/CartAddNotification';
+import SendNotification from '../features/footer/SendNotification';
 
 const AppLayout = () => {
   const tablet =
@@ -18,6 +19,7 @@ const AppLayout = () => {
         <Header />
         <MenuOptions />
         <CartAddNotification />
+        <SendNotification />
         <Outlet />
       </main>
       <Footer />

@@ -21,6 +21,8 @@ export function handleSetProductsCar({
 
 export function handleRemoveFromCar({ storage, product }: removeFromCarProps) {
   storage.removeFromCar(product.name);
+  storage.setNotification(false);
+
   handleSetProductsCar({
     getAllProductsCar: storage.getAllProductsCar,
     setProducstInCar: storage.setProducstInCar,

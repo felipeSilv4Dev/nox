@@ -7,7 +7,18 @@ import type { Swiper as SwiperType } from 'swiper/types';
 import { useEffect } from 'react';
 
 const ContainerProducts = () => {
-  const storage = useGlobalStorage((state) => state);
+  const products = useGlobalStorage((state) => state.products);
+  const setModelsProduct = useGlobalStorage((state) => state.setModelsProduct);
+  const setActiveModelsProduct = useGlobalStorage(
+    (state) => state.setActiveModelsProduct,
+  );
+  const getAllQuantityProducts = useGlobalStorage(
+    (state) => state.getAllQuantityProducts,
+  );
+  const handleSaveLocalStorage = useGlobalStorage(
+    (state) => state.handleSaveLocalStorage,
+  );
+  const quantityProducts = getAllQuantityProducts();
 
   const breakpoints = {
     768: {
@@ -22,33 +33,39 @@ const ContainerProducts = () => {
   };
 
   function handleSwiper(swiper: SwiperType) {
-    storage.setModelsProduct(swiper);
+    setModelsProduct(swiper);
   }
 
   function handleActiveIndexChange(index: SwiperType) {
-    storage.SetActiveModelsProduct(index.activeIndex);
+    setActiveModelsProduct(index.activeIndex);
   }
 
   useEffect(() => {
-    const quantityProducts = storage.getAllQuantityProducts();
     if (quantityProducts) return;
-    const itemsProducts: QuantityKeys[] = storage.products.map((product) => ({
+    const itemsProducts: QuantityKeys[] = products.map((product) => ({
       slug: `${product.slug}`,
       quantity: 1,
     }));
 
-    storage.handleSaveLocalStorage(itemsProducts);
-  }, [storage]);
+    handleSaveLocalStorage(itemsProducts);
+  }, [
+    getAllQuantityProducts,
+    quantityProducts,
+    handleSaveLocalStorage,
+    products,
+  ]);
 
   return (
     <Swiper
       spaceBetween={24}
-      onSwiper={handleSwiper}
-      onActiveIndexChange={handleActiveIndexChange}
       slidesPerView={1.45}
       breakpoints={breakpoints}
+      observer={false}
+      observeParents={false}
+      onSwiper={handleSwiper}
+      onActiveIndexChange={handleActiveIndexChange}
     >
-      {storage.products.map((product, index) => (
+      {products.map((product, index) => (
         <SwiperSlide key={index} className="!h-fit">
           <Product product={product} />
         </SwiperSlide>

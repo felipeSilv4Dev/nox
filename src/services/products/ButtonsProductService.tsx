@@ -26,6 +26,7 @@ export function handleSetStateButton(props: propsInitialState) {
 export function handleAddCar(props: propsHandleButtons) {
   props.e.preventDefault();
   props.storage.addToCar(props.product);
+  props.storage.setNotification(true);
   props.setButton((state) => !state);
   handleSetProductsCar({
     getAllProductsCar: props.storage.getAllProductsCar,
@@ -36,6 +37,7 @@ export function handleAddCar(props: propsHandleButtons) {
 export function handleRemoveFromCar(props: propsHandleButtons) {
   props.e.preventDefault();
   props.storage.removeFromCar(props.product.name);
+  props.storage.setNotification(false);
   props.setButton((state) => !state);
   handleSetProductsCar({
     getAllProductsCar: props.storage.getAllProductsCar,

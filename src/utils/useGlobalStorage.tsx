@@ -136,8 +136,14 @@ export declare interface useGlobalProps {
   setOpen: (open: boolean) => void;
   modelsProduct: SwiperType | null;
   setModelsProduct: (value: SwiperType) => void;
-  SetActiveModelsProduct: (value: number) => void;
+  setActiveModelsProduct: (value: number) => void;
   activeModelsProduct: number;
+  notification: boolean;
+  setNotification: (value: boolean) => void;
+  sendNotification: boolean;
+  setSendNotification: (value: boolean) => void;
+  inputValue: string;
+  setInputValue: (value: string) => void;
 
   // QUANTITY
   getAllQuantityProducts: () => QuantityKeys[] | null;
@@ -240,9 +246,15 @@ const useGlobalStorage = create<useGlobalProps>((set) => ({
   setOpen: (open) => set({ open: open }),
   modelsProduct: null,
   setModelsProduct: (value) => set({ modelsProduct: value }),
-  SetActiveModelsProduct: (value) => set({ activeModelsProduct: value }),
+  setActiveModelsProduct: (value) => set({ activeModelsProduct: value }),
   activeModelsProduct: 0,
   handleSaveLocalStorage,
+  notification: false,
+  setNotification: (value) => set({ notification: value }),
+  sendNotification: false,
+  setSendNotification: (value) => set({ sendNotification: value }),
+  inputValue: '',
+  setInputValue: (value) => set({ inputValue: value }),
 
   // QUANTITY
   quantityProduct: (value) => getQuantityProduct(value),
