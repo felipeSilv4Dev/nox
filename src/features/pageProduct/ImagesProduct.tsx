@@ -13,7 +13,7 @@ const ImagesProduct = () => {
     >
       <SwiperSlide>
         <div
-          style={{ backgroundImage: `url('../${product?.image}')` }}
+          style={{ backgroundImage: `url('${product?.image}')` }}
           className="h-full w-full bg-cover bg-center bg-no-repeat"
         />
       </SwiperSlide>

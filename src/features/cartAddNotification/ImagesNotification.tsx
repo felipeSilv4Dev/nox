@@ -11,7 +11,7 @@ const ImagesNotification = ({
     <div className="flex">
       <div
         style={{
-          backgroundImage: `url(https://wornandwound.com/library/uploads/2022/01/Omega-Speedmaster-321-Canopus-Gold-8.jpg)`,
+          backgroundImage: `url(${products[0].image})`,
         }}
         className={`tablet:h-20 tablet:w-20 border-black-800 relative h-15 w-15 border-2 bg-cover bg-center bg-no-repeat`}
       >

@@ -3,7 +3,8 @@ import type { Swiper as SwiperType } from 'swiper/types';
 
 const products = [
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1589391943533-d6856910b7a8?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Classic Brown',
     slug: 'classic-brown',
     model: 'AT30-SE',
@@ -14,7 +15,8 @@ const products = [
     details: 'Stainless Steel · Genuine Leather · Sapphire Glass',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1638872726444-0579101a60e7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Gold Prestige',
     slug: 'gold-prestige',
     model: 'AT31-SE',
@@ -25,7 +27,8 @@ const products = [
     details: 'Stainless Steel · Genuine Leather · Sapphire Glass',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1614028673848-14eae689983b?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Digital Sport',
     slug: 'digital-sport',
     model: 'AT32-SE',
@@ -36,7 +39,8 @@ const products = [
     details: 'Resin Strap · Mineral Glass · Quartz movement god',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1649768563901-a799abc06e74?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Submariner Black',
     slug: 'submariner-black',
     model: 'AT33-SE',
@@ -47,7 +51,8 @@ const products = [
     details: 'Oystersteel · Ceramic Bezel · Perpetual Movement',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1587400519568-1fe0329bfb2e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0Y2glMjBTcG9ydCUyMEFjdGl2ZXxlbnwwfHwwfHx8MA%3D%3D',
     name: 'Sport Active',
     slug: 'sport-active',
     model: 'AT34-SE',
@@ -58,7 +63,8 @@ const products = [
     details: 'Resin Strap · Mineral Glass · Quartz movement god',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1612817159576-986a0b7a4165?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2F0Y2glMjBFbGVnYW5jZSUyMExlYXRoZXJ8ZW58MHx8MHx8fDA%3D',
     name: 'Elegance Leather',
     slug: 'elegance-leather',
     model: 'AT35-SE',
@@ -69,7 +75,8 @@ const products = [
     details: '18k Gold · Leather Strap · Automatic Movement · Resin Strap',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1712256840358-23ed3248273c?q=80&w=427&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Illuminator',
     slug: 'illuminator',
     model: 'AT36-SE',
@@ -80,7 +87,8 @@ const products = [
     details: 'Digital Display · Resin Strap · LED Light · Mineral Glass',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1729044320112-7fad57c029ed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHdhdGNoJTIwUGxhdGludW0lMjBDaHJvbm98ZW58MHx8MHx8fDA%3D',
     name: 'Platinum Chrono',
     slug: 'platinum-chrono',
     model: 'AT37-SE',
@@ -91,7 +99,8 @@ const products = [
     details: 'Platinum Case · Sapphire Crystal · Chronometer',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://images.unsplash.com/photo-1616867343582-9af5734aad4c?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Nylon Edition',
     slug: 'nylon-edition',
     model: 'AT38-SE',
@@ -102,7 +111,8 @@ const products = [
     details: 'Digital Display · Resin Strap · LED Light · Mineral Glass',
   },
   {
-    image: './product-1.jpg',
+    image:
+      'https://plus.unsplash.com/premium_photo-1728012217493-b0bfdc0c389a?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Rose Gold Swiss',
     slug: 'rose-gold-swiss',
     model: 'AT39-SE',
