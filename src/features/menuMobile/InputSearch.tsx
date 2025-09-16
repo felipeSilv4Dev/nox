@@ -2,7 +2,9 @@ import * as FeatherIcon from 'feather-icons-react';
 import useGlobalStorage from '../../utils/useGlobalStorage';
 
 const InputSearch = () => {
-  const open = useGlobalStorage((state) => state.open);
+  const { open, searchProduct, setSearchProduct } = useGlobalStorage(
+    (state) => state,
+  );
 
   return (
     <label
@@ -12,9 +14,11 @@ const InputSearch = () => {
       <input
         id="search"
         type="text"
+        value={searchProduct}
         placeholder="Search Product"
         autoComplete="off"
         className="h-full w-full bg-transparent py-4 font-[Assistant] text-[16px] placeholder:font-[Assistant] focus:outline-none"
+        onChange={(e) => setSearchProduct(e.target.value)}
       />
       <FeatherIcon.Search className="inline" />
     </label>

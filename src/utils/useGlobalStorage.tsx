@@ -154,6 +154,8 @@ export declare interface useGlobalProps {
   setSendNotification: (value: boolean) => void;
   inputValue: string;
   setInputValue: (value: string) => void;
+  searchProduct: string;
+  setSearchProduct: (value: string) => void;
 
   // QUANTITY
   getAllQuantityProducts: () => QuantityKeys[] | null;
@@ -265,6 +267,8 @@ const useGlobalStorage = create<useGlobalProps>((set) => ({
   setSendNotification: (value) => set({ sendNotification: value }),
   inputValue: '',
   setInputValue: (value) => set({ inputValue: value }),
+  searchProduct: '',
+  setSearchProduct: (value) => set({ searchProduct: value }),
 
   // QUANTITY
   quantityProduct: (value) => getQuantityProduct(value),
