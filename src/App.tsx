@@ -1,11 +1,11 @@
-import './app.css';
-import { createBrowserRouter, RouterProvider } from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AppLayout from './ui/AppLayout';
 import Discovery from './ui/Discovery';
 import Collection from './ui/Collection';
 import ErrorPage from './ui/ErrorPage';
 import Car from './ui/Car';
 import PageProduct from './ui/PageProduct';
+import './App.css';
 
 const router = createBrowserRouter([
   {
