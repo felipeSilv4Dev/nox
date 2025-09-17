@@ -8,11 +8,9 @@ type SvgProps = {
 export default function DynamicSvg({ paths, color }: SvgProps) {
   return (
     <motion.svg
-      className={
-        'tablet:left-[90%] tablet:hidden absolute top-[10%] left-[88%] -z-1 h-[20vw] w-[20vw] -translate-x-1/2 -translate-y-1/2'
-      }
+      className={'w-25'}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 600 680"
+      viewBox="0 0 650 170"
       initial="hidden"
       animate="visible"
     >
@@ -21,7 +19,7 @@ export default function DynamicSvg({ paths, color }: SvgProps) {
           key={i}
           d={path.d}
           stroke={color || 'transparent'}
-          strokeWidth={1}
+          strokeWidth={2}
           fill="transparent"
           variants={{
             hidden: { pathLength: 0, fill: 'rgba(55, 58, 73, 0)' },
@@ -31,15 +29,15 @@ export default function DynamicSvg({ paths, color }: SvgProps) {
               stroke: 0,
               transition: {
                 pathLength: {
-                  duration: (i + 1) * 2,
+                  duration: 4,
                 },
                 fill: {
-                  duration: 1,
-                  delay: (i + 1) * 2,
+                  duration: 4,
+                  delay: 4,
                 },
                 stroke: {
-                  duration: 1,
-                  delay: (i + 1) * 2,
+                  duration: 4,
+                  delay: 4,
                 },
               },
             },

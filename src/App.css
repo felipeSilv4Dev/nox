@@ -46,6 +46,7 @@
   --animate-watch2: watch 5s ease infinite forwards;
   --animate-watch3: watch 6s ease infinite forwards;
   --animate-notification: notification 0.5s ease forwards;
+  --animate-width: width 8s ease forwards;
 
   @keyframes intro {
     0% {
@@ -112,6 +113,16 @@
     100% {
       opacity: 1;
       transform: initial;
+    }
+  }
+
+  @keyframes width {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
     }
   }
 }
