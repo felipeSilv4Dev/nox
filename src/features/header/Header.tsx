@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-3 py-6 ${scrolled && !open ? 'bg-black-900/70 backdrop-blur-md' : ''} ${open ? 'fixed overflow-hidden' : ''} col-span-full row-end-1 flex h-fit w-full items-center justify-between px-4`}
+      className={`sticky top-0 z-9 py-6 ${scrolled && !open ? 'bg-black-900/70 backdrop-blur-md' : ''} ${open ? 'fixed overflow-hidden' : ''} col-span-full row-end-1 flex h-fit w-full items-center justify-between px-4`}
     >
       <Logo />
       {!open && <NavLinksHeader />}

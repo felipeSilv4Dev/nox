@@ -26,7 +26,7 @@ const CartAddNotification = () => {
   return (
     notification && (
       <div
-        className={`${productsInCar ? 'animate-notification' : ''} bg-black-800 text-white-100 desktop-1:w-[80%] desktop-2:w-[76%] tablet:w-[94%] left-/2 fixed -top-1 z-3 col-span-full flex w-full items-center justify-between p-4 font-['Assistant']`}
+        className={`${productsInCar ? 'animate-notification' : ''} bg-black-800 text-white-100 desktop-1:w-[80%] desktop-2:w-[76%] tablet:w-[94%] left-/2 fixed -top-1 z-10 col-span-full flex w-full items-center justify-between p-4 font-['Assistant']`}
       >
         <ImagesNotification
           count={productsInCar.length}

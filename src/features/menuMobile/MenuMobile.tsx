@@ -14,7 +14,7 @@ const MenuMobile = () => {
   }
   return (
     <div className="tablet:hidden mobile-1:block cursor-pointer self-stretch">
-      <div className="z-4 h-full self-stretch" onClick={handleOpen}>
+      <div className="z-10 h-full self-stretch" onClick={handleOpen}>
         {iconMenu}
       </div>
     </div>
