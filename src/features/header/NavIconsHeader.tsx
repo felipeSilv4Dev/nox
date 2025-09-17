@@ -26,7 +26,7 @@ const NavIconsHeader = () => {
       <Icon to="/car">
         <FeatherIcon.ShoppingCart></FeatherIcon.ShoppingCart>
         {productsInCar && (
-          <span className="bg-black-400 tablet:top-0 tablet:right-0 absolute -top-2 -right-2 z-1 block h-4 w-4 text-center text-xs">
+          <span className="tablet:top-0 tablet:right-0 absolute -top-2 -right-2 z-1 block h-4 w-4 bg-blue-700 text-center text-xs">
             {productsInCar.length}
           </span>
         )}

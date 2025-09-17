@@ -7,7 +7,7 @@ interface IconQuantityProps {
 const IconQuantityProduct = ({ children, onClick }: IconQuantityProps) => {
   return (
     <span
-      onClick={onClick}
+      onClick={(e) => (e.preventDefault(), onClick())}
       className="border-black-500 tablet:p-4 hover:bg-black-500 flex h-fit cursor-pointer items-center justify-center border-1 p-2 text-blue-200 transition-all duration-75 ease-linear"
     >
       {children}

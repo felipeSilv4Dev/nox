@@ -23,7 +23,7 @@ const Car = () => {
   useToTop();
 
   return (
-    <section className="text-white-100 col-span-full font-['Assistant']">
+    <section className="text-white-100 col-span-full row-span-full font-['Assistant']">
       <HeaderCar />
       {!productsInCar && <EmptyCar />}
 

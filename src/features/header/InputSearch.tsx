@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import * as FeatherIcon from 'feather-icons-react';
+import ContainerSearchProducts from './ContainerSearchProducts';
+import useGlobalStorage from '../../utils/useGlobalStorage';
 
 const InputSearch = () => {
   const [search, setSearch] = useState(false);
-
+  const { searchProduct, setSearchProduct } = useGlobalStorage(
+    (state) => state,
+  );
   const handleOpenSearch:
     | React.MouseEventHandler<HTMLDivElement>
     | undefined = (e) => {
@@ -20,8 +24,11 @@ const InputSearch = () => {
         id="found"
         type="text"
         placeholder="Search Product"
+        value={searchProduct}
         autoComplete="off"
-        className={`h-fit w-full ${search ? 'visible' : 'invisible'} bg-transparent py-4 font-[Assistant] text-xl placeholder:font-[Assistant] placeholder:opacity-0 focus:outline-none`}
+        onChange={(e) => setSearchProduct(e.target.value)}
+        onBlur={(e) => e.target.focus()}
+        className={`h-fit w-full ${search ? 'visible' : 'invisible'} peer bg-transparent py-4 font-[Assistant] text-xl placeholder:font-[Assistant] placeholder:opacity-0 focus:outline-none`}
       />
 
       <div
@@ -30,6 +37,8 @@ const InputSearch = () => {
       >
         <FeatherIcon.Search />
       </div>
+
+      <ContainerSearchProducts />
     </label>
   );
 };
