@@ -67,7 +67,7 @@ O design foi feito do zero.
 
 ---
 
-Feito com red_heart : by [Felipe_Silva](https://github.com/felipeSilv4dev)
+Feito com 💙 : by [Felipe_Silva](https://github.com/felipeSilv4dev)
 
  <div align="start">
   <a href='http://www.linkedin.com/in/felipe-silva-1019ab271' target='_blank'><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'/></a>
