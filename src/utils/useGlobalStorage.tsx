@@ -28,9 +28,9 @@ const products = [
   },
   {
     image:
-      'https://images.unsplash.com/photo-1614028673848-14eae689983b?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    name: 'Digital Sport',
-    slug: 'digital-sport',
+      'https://i.pinimg.com/1200x/65/7e/3c/657e3c47f9ee8e09ea3ac451a4fecb8f.jpg',
+    name: 'Citizen Sport',
+    slug: 'citizen-sport',
     model: 'AT32-SE',
     price: '$ 180',
     oldPrice: '$ 250',

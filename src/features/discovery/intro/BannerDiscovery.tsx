@@ -6,7 +6,7 @@ const BannerDiscovery = () => {
   return (
     <div
       style={{
-        backgroundImage: `radial-gradient(circle at center,rgba(6,6,11,.3),rgba(6,6,11,1) 60%),url(${isTablet ? 'https://images.unsplash.com/photo-1601801958048-aa2e1c3e21e3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' : 'https://images.unsplash.com/photo-1601801958048-aa2e1c3e21e3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'})`,
+        backgroundImage: `radial-gradient(circle at center,rgba(6,6,11,.3),rgba(6,6,11,1) 60%),url(${isTablet ? 'https://www.benbridge.com/on/demandware.static/-/Library-Sites-BBJSharedLibrary/default/dw470e7072/images/rolex-v7/rolex-collection-pages/rolex-collection-pages-assets/rolex-collection-page-deepsea/rolex-collection-page-rolex-deepsea-assets-landscape/rolex-deepsea-m136660-0005_2403bh_0002.jpg' : 'https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1200/v1708403476/rolexcom/collection/family-pages/professional-watches/sea-dweller/citizen-of-the-deep/professional-watches-sea-dweller-citizen-of-the-deep-water-beauty-m126600-0002-2210jva-001'})`,
       }}
       className={`absolute top-0 left-0 z-0 h-screen w-full bg-cover bg-center bg-no-repeat px-4 transition-all ease-linear`}
     />

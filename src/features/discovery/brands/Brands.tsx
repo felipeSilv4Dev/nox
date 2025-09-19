@@ -10,11 +10,17 @@ const Brands = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const brands = [
     {
+      nameBrand: 'casio',
+      descriptionBrand:
+        'Explore top brands known for quality, style, and timeless design.',
+      image: 'https://fs1.deka.ua/content/news/a1386/8.jpg',
+    },
+    {
       nameBrand: 'lacoste',
       descriptionBrand:
         'Explore top brands known for quality, style, and timeless design.',
       image:
-        'https://images.unsplash.com/photo-1635462684825-3621c1df5403?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://koala.sh/api/image/v2-8sf6v-cqiko.jpg?width=1344&height=768&dream',
     },
 
     {
@@ -25,18 +31,11 @@ const Brands = () => {
         'https://images.unsplash.com/photo-1609587312208-cea54be969e7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
-      nameBrand: 'casio',
-      descriptionBrand:
-        'Explore top brands known for quality, style, and timeless design.',
-      image:
-        'https://images.unsplash.com/photo-1719593611152-f89ee9073b84?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-    {
       nameBrand: 'rolex',
       descriptionBrand:
         'Explore top brands known for quality, style, and timeless design.',
       image:
-        'https://images.unsplash.com/photo-1601209562572-e13d9cc194b1?q=80&w=739&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://www.benbridge.com/on/demandware.static/-/Library-Sites-BBJSharedLibrary/default/dw470e7072/images/rolex-v7/rolex-collection-pages/rolex-collection-pages-assets/rolex-collection-page-deepsea/rolex-collection-page-rolex-deepsea-assets-landscape/rolex-deepsea-m136660-0005_2403bh_0002.jpg',
     },
   ];
   return (
