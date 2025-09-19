@@ -6,6 +6,7 @@ import CartAddNotification from '../features/cartAddNotification/CartAddNotifica
 import SendNotification from '../features/footer/SendNotification';
 import Loader from './Loader';
 import { useEffect, useState } from 'react';
+import BannerDiscovery from '../features/discovery/intro/BannerDiscovery';
 
 const AppLayout = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +24,8 @@ const AppLayout = () => {
   if (!isLoading) {
     return (
       <section className="bg-black-900 h-max min-h-dvh">
+        <BannerDiscovery />
+
         <main
           className={`${tablet} ${desktop} tablet:gap-8 relative mx-auto grid max-w-[1600px] grid-cols-[repeat(4,1fr)] grid-rows-1 gap-x-8`}
         >
