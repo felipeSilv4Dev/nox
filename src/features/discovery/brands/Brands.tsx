@@ -13,7 +13,8 @@ const Brands = () => {
       nameBrand: 'casio',
       descriptionBrand:
         'Explore top brands known for quality, style, and timeless design.',
-      image: 'https://fs1.deka.ua/content/news/a1386/8.jpg',
+      image:
+        'https://gshock.casio.com/content/casio/locales/sg/en/brands/gshock/g-news/new-releases/2025/dw-5000r/_jcr_content/root/responsivegrid/container_copy/container_2106131580/teaser_copy_copy.casiocoreimg.jpeg/1740637561335/banner-dw-5000r-pc-new.jpeg',
     },
     {
       nameBrand: 'lacoste',
